@@ -16,7 +16,7 @@
 *.nar
 *.ear
 *.zip
-*.tar.gz
+*.tar.gzjava 
 *.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
@@ -27,3 +27,8 @@ replay_pid*
 .idea
 .recommenders
 RemoteSystemsTempFiles
+/.metadata/
+
+.classpath
+.project
+.settings
