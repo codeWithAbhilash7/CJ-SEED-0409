@@ -29,6 +29,3 @@ replay_pid*
 RemoteSystemsTempFiles
 /.metadata/
 
-.classpath
-.project
-.settings
