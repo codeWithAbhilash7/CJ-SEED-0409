@@ -1,10 +1,11 @@
 package com.core;
 
 public class Student {
-	int rollNumber; // id
-	String name; // name
-	float marks; // marks in any subject
+	private int rollNumber; // id
+	private String name; // name
+	private float marks; // marks in any subject
 
+	// default/parameterless constructor
 	Student() {
 		System.out.println("Line 9 :: Student default Ctor...");
 		this.rollNumber = -1;
@@ -13,6 +14,7 @@ public class Student {
 		System.out.println("Line 13 :: Student default Ctor...");
 	}
 
+	// parameterized constructor
 	Student(int id, String name, float marks) {
 		System.out.println("Line 17 :: Student Parameterized Ctor...");
 		this.rollNumber = id;
@@ -26,6 +28,7 @@ public class Student {
 		return "Student [rollNumber=" + rollNumber + ", name=" + name + ", marks=" + marks + "]";
 	}
 
+	// getters and setters
 	public int getRollNumber() {
 		return rollNumber;
 	}
