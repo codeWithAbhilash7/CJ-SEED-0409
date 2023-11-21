@@ -1,56 +1,75 @@
 package com.core;
 
 public class Student {
-	private int rollNumber; // id
-	private String name; // name
-	private float marks; // marks in any subject
+	private int rollNo;
+	private String name;
+	private String address;
+	private double maths;
+	private double physics;
+	private double chemistry;
 
-	// default/parameterless constructor
-	Student() {
-		System.out.println("Line 9 :: Student default Ctor...");
-		this.rollNumber = -1;
-		this.name = "";
-		this.marks = 0;
-		System.out.println("Line 13 :: Student default Ctor...");
-	}
+	private double totalMarks;
+	private double average;
 
-	// parameterized constructor
-	Student(int id, String name, float marks) {
-		System.out.println("Line 17 :: Student Parameterized Ctor...");
-		this.rollNumber = id;
+	private static int rollNumberGenerator = 100;
+
+	public Student(String name) {
+		super();
 		this.name = name;
-		this.marks = marks;
-		System.out.println("Line 21 :: Student Parameterized Ctor...");
+		this.address = "Pune";
+		this.rollNo = ++rollNumberGenerator;
+	}
+	
+	public Student(String name, String address) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.rollNo = ++rollNumberGenerator;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [rollNumber=" + rollNumber + ", name=" + name + ", marks=" + marks + "]";
+		return "Student [rollNo=" + rollNo + ", name=" + name + ", maths=" + maths + ", physics=" + physics
+				+ ", chemistry=" + chemistry + ", totalMarks=" + totalMarks + ", average=" + average + "]";
 	}
 
-	// getters and setters
-	public int getRollNumber() {
-		return rollNumber;
+	public double getMaths() {
+		return maths;
 	}
 
-	public void setRollNumber(int rollNumber) {
-		this.rollNumber = rollNumber;
+	private void updateMarks() {
+		totalMarks = physics + chemistry + maths;
+		average =  totalMarks / 3;
 	}
 
-	public String getName() {
-		return name;
+	public void setMaths(double maths) {
+		this.maths = maths;
+		updateMarks();
+
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public double getPhysics() {
+		return physics;
 	}
 
-	public float getMarks() {
-		return marks;
+	public void setPhysics(double physics) {
+		this.physics = physics;
+		updateMarks();
 	}
 
-	public void setMarks(float marks) {
-		this.marks = marks;
+	public double getChemistry() {
+		return chemistry;
 	}
+
+	public void setChemistry(double chemistry) {
+		this.chemistry = chemistry;
+		updateMarks();
+	}
+
+	public double getAverage() {
+		return average;
+	}
+	
+	
 
 }
